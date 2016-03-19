@@ -27,25 +27,25 @@ void loop() {
       Serial.print("Sensor Right: ");
       Serial.println(sensorRight);
     if (sensorLeft < 300) {
-      analogWrite(motorRight1,100);
+      analogWrite(motorRight1,200);
       delay(1000);
-      analogWrite(motorRight2,100);
+      analogWrite(motorRight2,200);
       delay(1000);
     }
     else if (sensorRight < 300) {
-      analogWrite(motorLeft1,100);
+      analogWrite(motorLeft1,200);
       delay(1000);
-      analogWrite(motorLeft2,100);
+      analogWrite(motorLeft2,200);
       delay(1000);
     }
     else {
-      analogWrite(motorLeft1,1);//lower = faster
+      analogWrite(motorLeft1,255);//lower = faster
       delay(1000);
-      analogWrite(motorLeft2,1);
+      analogWrite(motorLeft2,255);
       delay(1000);
-      analogWrite(motorRight1,1);
+      analogWrite(motorRight1,255);
       delay(1000);
-      analogWrite(motorRight2,1);
+      analogWrite(motorRight2,255);
       delay(1000);
     }
 
