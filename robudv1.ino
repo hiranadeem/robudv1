@@ -16,36 +16,38 @@ void setup() {
 }
 
 void loop() {
-  sensorLeft = analogRead(A1);
-  sensorRight = analogRead(A0);
+
 
   while(true){
-    if (sensorLeft < 300) {
-      digitalWrite(motorRight1,100);
-      delay(1000);
-      digitalWrite(motorRight2,100);
-      delay(1000);
-    }
-    else if (sensorRight < 300) {
-      digitalWrite(motorLeft1,100);
-      delay(1000);
-      digitalWrite(motorLeft2,100);
-      delay(1000);
-    }
-    else {
-      digitalWrite(motorLeft1,1);//lower = faster
-      delay(1000);
-      digitalWrite(motorLeft2,1);
-      delay(1000);
-      digitalWrite(motorRight1,1);
-      delay(1000);
-      digitalWrite(motorRight2,1);
-      delay(1000);
-    }
+    sensorLeft = analogRead(A1);
+    sensorRight = analogRead(A0);
       Serial.print("Sensor Left: ");
       Serial.print(sensorLeft);
       Serial.print("    ");
       Serial.print("Sensor Right: ");
       Serial.println(sensorRight);
+    if (sensorLeft < 300) {
+      analogWrite(motorRight1,100);
+      delay(1000);
+      analogWrite(motorRight2,100);
+      delay(1000);
+    }
+    else if (sensorRight < 300) {
+      analogWrite(motorLeft1,100);
+      delay(1000);
+      analogWrite(motorLeft2,100);
+      delay(1000);
+    }
+    else {
+      analogWrite(motorLeft1,1);//lower = faster
+      delay(1000);
+      analogWrite(motorLeft2,1);
+      delay(1000);
+      analogWrite(motorRight1,1);
+      delay(1000);
+      analogWrite(motorRight2,1);
+      delay(1000);
+    }
+
   }
 }
