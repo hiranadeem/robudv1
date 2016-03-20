@@ -6,7 +6,7 @@ int motorRight2 = 10;
 int sensorLeft, sensorRight;
 
 int trigPin = 11;    //Trig - green Jumper
-int echoPin = 12;    //Echo - yellow Jumper
+int echoPin = 12;    //Echo - blue Jumper
 long duration, cm, inches;
 
 void setup() {
@@ -44,6 +44,7 @@ void loop() {
     // Read the signal from the sensor: a HIGH pulse whose
     // duration is the time (in microseconds) from the sending
     // of the ping to the reception of its echo off of an object.
+    pinMode(echoPin, INPUT);
     duration = pulseIn(echoPin, HIGH);
    
     // convert the time into a distance
@@ -71,19 +72,19 @@ void loop() {
       analogWrite(motorRight2, 0);    // turn the LED off by making the voltage LOW
       delay(100); 
     }
-    else if (inches <= 2) {
+    else if (inches < 5) {
       analogWrite(motorLeft1, 0);   // turn the LED on (HIGH is the voltage level)
-      delay(100);              // wait for a second
+      delay(1000);              // wait for a second
       analogWrite(motorLeft2, 0);    // turn the LED off by making the voltage LOW
-      delay(100);     // wait for a second
+      delay(1000);     // wait for a second
       
       analogWrite(motorRight1, 0);   // turn the LED on (HIGH is the voltage level)
-      delay(100);              // wait for a second
+      delay(1000);              // wait for a second
       analogWrite(motorRight2, 0);    // turn the LED off by making the voltage LOW
-      delay(100); 
+      delay(1000); 
     }
     else {
-      analogWrite(motorLeft1, 100);   // turn the LED on (HIGH is the voltage level)
+      analogWrite(motorLeft1, 200);   // turn the LED on (HIGH is the voltage level)
       delay(100);              // wait for a second
       analogWrite(motorLeft2, 0);    // turn the LED off by making the voltage LOW
       delay(100);     // wait for a second
