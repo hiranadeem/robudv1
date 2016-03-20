@@ -26,34 +26,34 @@ void loop() {
     Serial.println(sensorRight);
     
     if (sensorLeft < 100) {
-      analogWrite(motorLeft1, 255);   // turn the LED on (HIGH is the voltage level)
+      analogWrite(motorLeft1, 100);   // turn the LED on (HIGH is the voltage level)
       delay(100);              // wait for a second
       analogWrite(motorLeft2, 0);    // turn the LED off by making the voltage LOW
       delay(100);     // wait for a second
       
-      analogWrite(motorRight1, 50);   // turn the LED on (HIGH is the voltage level)
+      analogWrite(motorRight1, 49);   // turn the LED on (HIGH is the voltage level)
       delay(100);              // wait for a second
       analogWrite(motorRight2, 0);    // turn the LED off by making the voltage LOW
       delay(100); 
     }
     else if (sensorRight < 90) {
-      analogWrite(motorLeft1, 50);   // turn the LED on (HIGH is the voltage level)
+      analogWrite(motorLeft1, 49);   // turn the LED on (HIGH is the voltage level)
       delay(100);              // wait for a second
       analogWrite(motorLeft2, 0);    // turn the LED off by making the voltage LOW
       delay(100);     // wait for a second
       
-      analogWrite(motorRight1, 255);   // turn the LED on (HIGH is the voltage level)
+      analogWrite(motorRight1, 100);   // turn the LED on (HIGH is the voltage level)
       delay(100);              // wait for a second
       analogWrite(motorRight2, 0);    // turn the LED off by making the voltage LOW
       delay(100); 
     }
     else {
-      analogWrite(motorLeft1, 255);   // turn the LED on (HIGH is the voltage level)
+      analogWrite(motorLeft1, 100);   // turn the LED on (HIGH is the voltage level)
       delay(100);              // wait for a second
       analogWrite(motorLeft2, 0);    // turn the LED off by making the voltage LOW
       delay(100);     // wait for a second
       
-      analogWrite(motorRight1, 255);   // turn the LED on (HIGH is the voltage level)
+      analogWrite(motorRight1, 100);   // turn the LED on (HIGH is the voltage level)
       delay(100);              // wait for a second
       analogWrite(motorRight2, 0);    // turn the LED off by making the voltage LOW
       delay(100); 
